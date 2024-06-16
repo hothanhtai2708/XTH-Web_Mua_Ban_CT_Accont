@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.cdnfonts.com/css/proxima-nova-condensed" rel="stylesheet">                
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>  
+  <script src="https://kit.fontawesome.com/830d8d2c62.js" crossorigin="anonymous"></script>  
+  <link rel="icon" type="image/x-icon" href="./img/logo/iconnew.png">
+  <title>Divine Clone System Administrator</title>
+  <style>
+    .list-group-item.active{
+      background-color: white;
+      border-color: #dee2e6;
+      border-left: 5px solid black;
+      font-weight: bold;
+      color: black !important;
+    }
+
+    .accordion-button:not(.collapsed) {      
+      background-color: unset !important;      
+    }
+
+    .accordion-button:focus {    
+      border-color: unset !important;
+    }
+  </style>
+</head>
+<body class="bg-body-secondary">
+  <header>
+    <div style="background-color: #2679f2;">      
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <div class="d-flex align-items-center">
+            <a class="navbar-brand text-white fw-bold" href="#">
+              <img src="https://cdn.divineshop.vn/static/b1402e84a947ed36cebe9799e47f61c2.svg" alt="" style="width: 49px; height: 49px;">
+              Divine Shop
+            </a>
+            <div class="vr bg-white opacity-100" style="width: 2px;"></div>
+            <p class="m-0 ms-3 text-white">Administrator</p>
+          </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="">
+            <ul class="navbar-nav">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle text-white fw-bold" style="font-size: 0.85rem;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <img src="https://cdn.divineshop.vn/image/catalog/icon/avatar-khach-hang-2-52544.png?hash=1649933269" class="rounded-circle" alt="" width="42px" height="42px">
+                  hieuchi1999
+                </a>
+                <ul class="dropdown-menu">
+                  <li class="py-1 px-3"  style="font-size: 0.85rem;">Số dư tài khoản</li>
+                  <li><a class="dropdown-item fw-bold py-2" href="#">4.000đ <i class="fa-solid fa-plus text-primary"></i></a></li>
+                  <li><a class="dropdown-item" style="font-size: 0.85rem;" href="#">Quản trị</a></li>
+                  <li><a class="dropdown-item" style="font-size: 0.85rem;" href="#">Quản lý tài khoản</a></li>
+                  <li><a class="dropdown-item" style="font-size: 0.85rem;" href="#">Lịch sử đơn hàng</a></li>                  
+                  <li><a class="dropdown-item" style="font-size: 0.85rem;" href="#">Sản phẩm yêu thích</a></li>
+                  <li><a class="dropdown-item" style="font-size: 0.85rem;" href="#">Đăng xuất</a></li>
+                </ul>
+              </li>
+            </ul>            
+          </div>          
+        </div>
+      </nav>
+    </div>    
+    
+  </header>
+  <section>
+    <div class="bg-white border-bottom border-light-subtle">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center py-2">          
+          <div class="d-flex justify-content-between align-items-center gap-4">
+            <a href="#" class="btn btn-outline-dark fw-bold border-0" style="font-size: 0.83rem;"><i class="fa-solid fa-users"></i> User Management</a>
+            <a href="#" class="btn btn-outline-dark fw-bold border-0 " style="font-size: 0.83rem;"><i class="fa-brands fa-product-hunt"></i> Product Management</a>
+            <a href="#" class="btn btn-dark fw-bold" style="font-size: 0.83rem;"><i class="fa-solid fa-list"></i> Category Management</a>
+            <a href="#" class="btn btn-outline-dark fw-bold border-0" style="font-size: 0.83rem;"><i class="fa-solid fa-tags"></i> Discount Management</a>            
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-3">
+      <div class="row">
+        <div class="col-3">
+          <div class="list-group">
+            <button type="button" class="py-3 px-4 text-secondary list-group-item list-group-item-action active"><i class="fa-solid fa-wrench"></i> Category Detail</button>
+            <button type="button" class="py-3 px-4 text-secondary list-group-item list-group-item-action"><i class="fa-solid fa-table-list"></i> List Categories</button>
+          </div>
+        </div>
+        <div class="col-9 bg-white rounded border">
+          <div class="px-3 py-4">
+            <h4>Overview</h4>
+            <div class="row mt-3">
+              <div class="col-3">
+                <p style="font-size: 0.85rem;" class="fw-light mb-2">Category ID</p>
+                <p style="font-size: 0.85rem;"  class="fw-bold">1234</p>
+              </div>
+              <div class="col-3">
+                <p style="font-size: 0.85rem;" class="fw-light mb-2">Category Title</p>
+                <p style="font-size: 0.85rem;"  class="fw-bold">RPG</p>
+              </div>              
+            </div>
+            <hr>
+            <form action="">              
+              <div class="row">
+                <div class="col-6">
+                  <div class="form-floating mb-3">
+                    <input type="text" class="form-control"  placeholder="Category Title">
+                    <label for="floatingInput">Category Title</label>
+                  </div>
+                </div>
+                <div>
+                  <button class="btn btn-primary" type="submit">Save change</button>
+                  <button class="btn btn-outline-danger" type="">Delete</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <hr>
+    <div class="container">
+      <div class="d-flex align-items-center justify-content-between text-secondary">
+        <p>2024 © Divine Shop.</p>
+        <p>Design & Develop by HuyDz</p>
+      </div>
+    </div>
+  </footer>
+
+  <section>
+    <div class="container my-3">
+      <div class="row">
+        <div class="col-3">
+          <div class="list-group">
+            <button type="button" class="py-3 px-4 text-secondary list-group-item list-group-item-action"><i class="fa-solid fa-wrench"></i> Category Detail</button>
+            <button type="button" class="py-3 px-4 text-secondary list-group-item list-group-item-action active"><i class="fa-solid fa-table-list"></i> List Categories</button>
+          </div>
+        </div>
+        <div class="col-9 bg-white rounded border">
+          <div class="px-3 py-4">
+            <h4>Categories List</h4>            
+            <hr>
+            <div class="d-flex align-items-center justify-content-between">
+              <form action="">
+                <div class="d-flex align-items-center gap-2">
+                  <div class="form-floating">
+                    <input type="text" class="form-control"  placeholder="Search">
+                    <label for="floatingInput">Search</label>
+                  </div>
+                  <div>
+                    <div class="form-floating">
+                      <select class="form-select pe-5" aria-label="Floating label select example">
+                        <option selected>Steam</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                      </select>
+                      <label for="">Sort</label>
+                    </div>
+                  </div>
+                  <button class="btn btn-outline-secondary p-3" type="button"><i class="fa-solid fa-filter"></i></button>
+                </div>
+              </form>
+              
+              <div>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary p-3" data-bs-toggle="modal" data-bs-target="#addProduct">
+                  <i class="fa-solid fa-circle-plus"></i> Create Category
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="addProduct" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Create Category</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <form action="">
+                        <div class="modal-body">  
+                          <div class="row">
+                            <div class="col-12">
+                              <div class="form-floating mb-3">
+                                <input type="text" class="form-control"  placeholder="Product Title">
+                                <label for="floatingInput">Category Title</label>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Close</button>
+                          <button type="submit" class="btn btn-primary">Create Category</button>
+                        </div>
+                      </form>                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <hr>
+            <div class="container">
+              <table class="table align-middle">
+                <thead class="table-light">
+                  <tr>
+                    <th scope="col">Category ID</th>
+                    <th scope="col">Category Name</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">1245620</th>
+                    <td>
+                      <div class="d-flex align-items-center gap-2">
+                        <div class="">
+                          <p class="m-0 fw-semibold">Elden Ring (CD Key Steam)</p>                          
+                        </div>
+                      </div>
+                    </td>
+                    <td>
+                      <div class="dropdown">
+                        <a class="btn btn-secondary btn-sm" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          <i class="fa-solid fa-ellipsis"></i>
+                        </a>
+                      
+                        <ul class="dropdown-menu">
+                          <li><a class="dropdown-item" href="#"><i class="fa-solid fa-eye"></i> View & Edit</a></li>
+                          <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash"></i> Delete</a></li>                          
+                        </ul>
+                      </div>
+                    </td>
+                  </tr>                    
+                </tbody>
+              </table>
+              <div class="d-flex align-items-center justify-content-between">
+                <p>Showing <b>10</b> of <b>57</b> Results</p>
+                <nav aria-label="...">
+                  <ul class="pagination">
+                    <li class="page-item">
+                      <span class="page-link"><span aria-hidden="true">&laquo;</span></span>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item active" aria-current="page">
+                      <span class="page-link">2</span>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                      <a class="page-link" href="#"><span aria-hidden="true">&raquo;</span></a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+  <script type="text/javascript">
+    const myModal = document.getElementById('myModal')
+    const myInput = document.getElementById('myInput')
+  
+    myModal.addEventListener('shown.bs.modal', () => {
+      myInput.focus()
+    })
+  </script>
+</body>
+</html>
+
+
+
+
+
