@@ -18,7 +18,7 @@ public class SecurityConfig {
                     auth.anyRequest().permitAll();
                 })
                 .formLogin(formlogin -> formlogin
-                        .loginPage("/login")  // Đặt URL trang đăng nhập ở đây
+                        .loginPage("/login111")  // Đặt URL trang đăng nhập ở đây
                         .defaultSuccessUrl("/home")
                         .permitAll()
                 ).logout(logout -> logout
