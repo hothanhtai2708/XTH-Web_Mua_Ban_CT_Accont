@@ -59,8 +59,8 @@
     <div style="background-color: #2679f2;">      
       <nav class="navbar navbar-expand-lg">
         <div class="container">
-          <a class="navbar-brand text-white fw-bold" href="#">
-            <img src="https://cdn.divineshop.vn/static/b1402e84a947ed36cebe9799e47f61c2.svg" alt="" style="width: 49px; height: 49px;">
+          <a class="navbar-brand text-white fw-bold" href="/index">
+            <img src="https://cdn.divineshop.vn/static/b1402e84a947ed36cebe9799e47f61c2.svg"  alt="" style="width: 49px; height: 49px;">
             Divine Shop
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -70,12 +70,13 @@
             <input class="form-control rounded-end-0" type="search" placeholder="Tìm kiếm sản phẩm" aria-label="Search">
             <button class="btn text-white rounded-start-0" style="background-color: #0a59cc;" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
           </form>
-          <div class="text-white">
+          <div class="text-white" id="userContainer">
             <button type="button" class="btn btn-outline-light rounded-circle"><i class="fa-solid fa-user"></i></button>
-            <button type="button" class="btn p-0 text-white fw-semibold" data-bs-toggle="modal" data-bs-target="#staticBackdrop"  style="font-size: 0.83rem;">Đăng nhập</button>
+            <button type="button" class="btn p-0 text-white fw-semibold" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="font-size: 0.83rem;" id="loginButton">Đăng nhập</button>
             <span style="font-size: 0.83rem;">/</span>
-            <button type="button" class="btn p-0 text-white fw-semibold" data-bs-toggle="modal" data-bs-target="#staticBackdrop1" style="font-size: 0.83rem;">Đăng ký</button>
+            <button type="button" class="btn p-0 text-white fw-semibold" data-bs-toggle="modal" data-bs-target="#staticBackdrop1" style="font-size: 0.83rem;" id="registerButton">Đăng ký</button>
           </div>
+
           <div class="d-none">
             <ul class="navbar-nav">
               <li class="nav-item dropdown">
@@ -1746,9 +1747,25 @@
 <script src="../JS/LoginJs.js"></script>
 <script>
   $(document).ready(function() {
+    // Kiểm tra dữ liệu phiên làm việc khi tải trang
+    $.ajax({
+      url: '/session-data',
+      type: 'GET',
+      success: function(response) {
+        if (response.status) {
+          // Cập nhật UI với dữ liệu phiên làm việc
+          $('#userContainer').html(`
+          <button type="button" class="btn btn-outline-light rounded-circle"><i class="fa-solid fa-user"></i></button>
+          <span style="font-size: 0.83rem;">${response.data.name}</span>
+        `);
+        }
+      }
+    });
+
     $('#submitLoginId').click(function() {
       var email = $('#emailId').val();
       var password = $('#passwordId').val();
+
       $.ajax({
         url: '/login',
         type: 'GET',
@@ -1759,13 +1776,23 @@
         success: function(response) {
           if (response.status) {
             Swal.fire({
-              title: "Thành công !",
+              title: "Thành công!",
               text: "Bạn đã đăng nhập thành công.",
               icon: "success"
+            }).then((result) => {
+              let name = response.data.name;
+              if (result.isConfirmed) {
+                // Cập nhật UI với dữ liệu phiên làm việc
+                $('#userContainer').html(`
+                <button type="button" class="btn btn-outline-light rounded-circle"><i class="fa-solid fa-user"></i></button>
+                <span style="font-size: 0.83rem;">${name}</span>
+              `);
+                location.reload();
+              }
             });
           } else {
             Swal.fire({
-              title: "Thất bại !",
+              title: "Thất bại!",
               text: "Vui lòng thử lại.",
               icon: "error"
             });
@@ -1774,7 +1801,7 @@
         error: function(xhr, status, error) {
           console.error('Error: ' + error);
           Swal.fire({
-            title: "Thất bại !",
+            title: "Thất bại!",
             text: "Không được để trống.",
             icon: "error"
           });
