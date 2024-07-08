@@ -16,13 +16,10 @@ public class LoginM {
     private String password;
     private boolean isAdmin;
 
-    public LoginM(String username, String email) {
-        this.name = username;
-        this.email = email;
-    }
-
-
     public static LoginM convertAccountEToLoginM(AccountE accountE){
+        if (accountE == null) {
+            return null;
+        }
         return LoginM.builder()
                 .name(accountE.getUsername())
                 .email(accountE.getEmail())
