@@ -17,6 +17,9 @@ public class LoginM {
     private Boolean admin;
 
     public static LoginM convertAccountEToLoginM(AccountE accountE){
+        if (accountE == null) {
+            return null;
+        }
         return LoginM.builder()
                 .name(accountE.getUsername())
                 .email(accountE.getEmail())

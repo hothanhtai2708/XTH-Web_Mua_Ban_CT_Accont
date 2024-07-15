@@ -39,31 +39,175 @@
 </head>
 
 <body class="bg-body-secondary">
-    <header>
-        <div style="background-color: #0a59cc;">
-            <div class="container">
-                <div class="d-flex justify-content-between align-items-center">
-                    <div>
-                        <a href="#" class="nav-link text-white" style="font-size: 0.8rem;"><i
-                                class="fa-solid fa-angle-left"></i> <i class="fa-solid fa-angle-right"></i> Tài khoản
-                            OpenAI - ChatGPT (Có sẵn 5$)</a>
-                    </div>
-                    <div>
-                        <ul class="navbar-nav flex-row gap-4 text-white" style="font-size: 0.85rem;">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"><i class="fa-solid fa-book me-2"></i> Hướng dẫn mua
-                                    hàng</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"><i class="fa-solid fa-percent me-2"></i> Ưu đãi khách
-                                    hàng</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#"><i class="fa-solid fa-phone me-2"></i> Thông tin liên
-                                    hệ</a>
-                            </li>
-                        </ul>
-                    </div>
+
+  <header>
+    <div class="row fixed-top">
+      <div style="background-color: #0a59cc;">
+        <div class="container">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <a href="#" class="nav-link text-white" style="font-size: 0.8rem;"><i class="fa-solid fa-angle-left"></i> <i class="fa-solid fa-angle-right"></i> Tài khoản OpenAI - ChatGPT (Có sẵn 5$)</a>
+            </div>
+            <div>
+              <ul class="navbar-nav flex-row gap-4 text-white" style="font-size: 0.85rem;">
+                <li class="nav-item">
+                  <a class="nav-link" href="#"><i class="fa-solid fa-book me-2"></i> Hướng dẫn mua hàng</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"><i class="fa-solid fa-percent me-2"></i> Ưu đãi khách hàng</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#"><i class="fa-solid fa-phone me-2"></i> Thông tin liên hệ</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="background-color: #2679f2;">
+        <nav class="navbar navbar-expand-lg">
+          <div class="container">
+            <a class="navbar-brand text-white fw-bold" href="/index">
+              <img src="https://cdn.divineshop.vn/static/b1402e84a947ed36cebe9799e47f61c2.svg"  alt="" style="width: 49px; height: 49px;">
+              Divine Shop
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <form class="d-flex" style="width: 35%;" role="search">
+              <input class="form-control rounded-end-0" type="search" placeholder="Tìm kiếm sản phẩm" aria-label="Search">
+              <button class="btn text-white rounded-start-0" style="background-color: #0a59cc;" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </form>
+            <div class="text-white" id="userContainer">
+              <button type="button" class="btn btn-outline-light rounded-circle"><i class="fa-solid fa-user"></i></button>
+              <button type="button" class="btn p-0 text-white fw-semibold" data-bs-toggle="modal" data-bs-target="#staticBackdrop" style="font-size: 0.83rem;" id="loginButton">Đăng nhập</button>
+              <span style="font-size: 0.83rem;">/</span>
+              <button type="button" class="btn p-0 text-white fw-semibold" data-bs-toggle="modal" data-bs-target="#staticBackdrop1" style="font-size: 0.83rem;" id="registerButton">Đăng ký</button>
+            </div>
+
+            <div class="d-none">
+              <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle text-white fw-bold" style="font-size: 0.85rem;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <img src="https://cdn.divineshop.vn/image/catalog/icon/avatar-khach-hang-2-52544.png?hash=1649933269" class="rounded-circle" alt="" width="42px" height="42px">
+                    hieuchi1999
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li class="py-1 px-3"  style="font-size: 0.85rem;">Số dư tài khoản</li>
+                    <li><a class="dropdown-item fw-bold py-2" href="#">4.000đ <i class="fa-solid fa-plus text-primary"></i></a></li>
+                    <li><a class="dropdown-item" style="font-size: 0.85rem;" href="#">Quản lý tài khoản</a></li>
+                    <li><a class="dropdown-item" style="font-size: 0.85rem;" href="#">Lịch sử đơn hàng</a></li>
+                    <li><a class="dropdown-item" style="font-size: 0.85rem;" href="#">Sản phẩm yêu thích</a></li>
+                    <li><a class="dropdown-item" style="font-size: 0.85rem;" href="#">Đăng xuất</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <button type="button" class="btn btn-outline-light px-3 py-2" style="font-size: 0.9rem;"><i class="fa-solid fa-cart-shopping"></i> Giỏ hàng <span class="badge text-bg-light px-1">4</span></button>
+          </div>
+        </nav>
+        <div class="container">
+          <div class="d-flex justify-content-between align-items-center pb-3">
+            <a href="#" class="nav-link text-white" style="font-size: 0.9rem;"><i style="font-size: 1rem;" class="me-2 fa-solid fa-eye"></i> Sản phẩm bạn vừa xem</a>
+            <a href="#" class="nav-link text-white" style="font-size: 0.9rem;"><i style="font-size: 1rem;" class="me-2 fa-solid fa-fire-flame-curved"></i> Sản phẩm mua nhiều</a>
+            <a href="#" class="nav-link text-white" style="font-size: 0.9rem;"><i style="font-size: 1rem;" class="me-2 fa-solid fa-percent"></i> Sản phẩm khuyến mại</a>
+            <a href="#" class="nav-link text-white" style="font-size: 0.9rem;"><i style="font-size: 1rem;" class="me-2 fa-solid fa-map-location-dot"></i> Đại lý giao dịch</a>
+            <a href="#" class="nav-link text-white" style="font-size: 0.9rem;"><i style="font-size: 1rem;" class="me-2 fa-solid fa-credit-card"></i> Hình thức thanh toán</a>
+          </div>
+        </div>
+      </div>
+      <div class="bg-white border-bottom border-light-subtle">
+        <div class="container">
+          <div class="d-flex justify-content-between align-items-center py-2">
+            <button type="button" class="btn fw-bold"  style="font-size: 0.83rem;"><i class="fa-solid fa-bars me-2 fs-6"></i> Danh mục sản phẩm</button>
+            <div class="d-flex justify-content-between align-items-center gap-4">
+              <a href="#" class="nav-link fw-bold" style="font-size: 0.83rem;"><img src="https://cdn.divineshop.vn/image/catalog/Anh/Icon%20svg/Nap-thesvg-30724.svg?hash=1640449820" style="width: 39px; height: 39px;" alt=""> Thủ thuật & Tin Tức</a>
+              <a href="#" class="nav-link fw-bold" style="font-size: 0.83rem;"><img src="https://cdn.divineshop.vn/image/catalog/Anh/Icon%20svg/Gioi-thieu-ban-be-87652.svg?hash=1640449820" style="width: 39px; height: 39px;" alt=""> Giới thiệu bạn bè</a>
+              <a href="#" class="nav-link fw-bold" style="font-size: 0.83rem;"><img src="https://cdn.divineshop.vn/image/catalog/Anh/Icon%20svg/Lien-he-hop-tac-33199.svg?hash=1640449820" style="width: 39px; height: 39px;" alt=""> Liên hệ hợp tác</a>
+              <a href="#" class="nav-link fw-bold" style="font-size: 0.83rem;"><img src="https://cdn.divineshop.vn/image/catalog/Anh/Icon%20svg/Uu-dai-khach-vip-79547.svg?hash=1640449820" style="width: 39px; height: 39px;" alt=""> Ưu đãi khách hàng VIP</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal -->
+    <div class="modal modal-lg fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <form  id="loginForm">
+          <div class="modal-content p-2">
+            <div class="modal-header border-0">
+              <h1 class="modal-title fs-3" id="loginId">Đăng nhập</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="row">
+                <div class="col-6">
+                  <p style="font-size: 0.85rem;">Đăng nhập để theo dõi đơn hàng, lưu danh sách sản phẩm yêu thích và nhận nhiều ưu đãi hấp dẫn</p>
+                  <div class="mb-3">
+                    <input type="email" class="form-control" id="emailId" name="email" placeholder="Email hoặc tên đăng nhập">
+                  </div>
+                  <div class="mb-3">
+                    <input type="password" class="form-control" id="passwordId" name="password" placeholder="Mật khẩu">
+                  </div>
+                  <a href="#" data-bs-toggle="modal" data-bs-target="#staticBackdrop2" class="text-decoration-none">Bạn quên mật khẩu?</a>
+                  <button type="button" class="btn w-100 mt-3 btn-primary" id="submitLoginId">Đăng nhập</button>
+                  <div class="d-flex justify-content-between align-items-center mt-3">
+                    <hr class="w-25">
+                    <div><p class="m-0" style="font-size: 0.85rem;">Hoặc đăng nhập bằng</p> </div>
+                    <hr class="w-25">
+                  </div>
+                  <div class="d-flex justify-content-center gap-4 align-items-center mt-3">
+                    <a href="#"><img src="https://cdn.divineshop.vn/static/0b314f30be0025da88c475e87a222e5a.svg" class="img-fluid" alt=""></a>
+                    <a href="#"><img src="https://cdn.divineshop.vn/static/4ba68c7a47305b454732e1a9e9beb8a1.svg" class="img-fluid" alt=""></a>
+                  </div>
+                </div>
+                <div class="col-6">
+                  <img src="https://cdn.divineshop.vn/static/368e705d45bfc8742aa9d20dbcf4c78c.svg" class="img-fluid" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- Modal 1-->
+    <div class="modal modal-lg fade" id="staticBackdrop1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content p-2">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">Đăng ký</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-6">
+                <p style="font-size: 0.85rem;">Đăng ký để theo dõi đơn hàng, lưu danh sách sản phẩm yêu thích và nhận nhiều ưu đãi hấp dẫn</p>
+                <div class="mb-3">                  
+                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email hoặc tên đăng nhập">
+                </div>
+                <div class="mb-3">                  
+                  <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="Mật khẩu">
+                </div>
+                <div class="mb-3">                  
+                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email hoặc tên đăng nhập">
+                </div>
+                <div class="mb-3">                  
+                  <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="Mật khẩu">
+                </div>
+                <div class="mb-3">                  
+                  <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Email hoặc tên đăng nhập">
+                </div>
+                <div class="mb-3">                  
+                  <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="Mật khẩu">
+                </div>
+                <div class="mb-3">                  
+                  <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="Mật khẩu">
+                </div>
+                <div class="form-check mb-3">
+                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+                  <label class="form-check-label"  style="font-size: 0.85rem;" for="flexCheckChecked">
+                    Tôi đồng ý nhận thông tin marketing mới từ Divine Shop.
+                  </label>
                 </div>
             </div>
         </div>
@@ -151,26 +295,48 @@
                 </div>
             </div>
         </div>
-        <div class="bg-white border-bottom border-light-subtle">
-            <div class="container">
-                <div class="d-flex justify-content-between align-items-center py-2">
-                    <button type="button" class="btn fw-bold" style="font-size: 0.83rem;"><i
-                            class="fa-solid fa-bars me-2 fs-6"></i> Danh mục sản phẩm
-                    </button>
-                    <div class="d-flex justify-content-between align-items-center gap-4">
-                        <a href="#" class="nav-link fw-bold" style="font-size: 0.83rem;"><img
-                                src="https://cdn.divineshop.vn/image/catalog/Anh/Icon%20svg/Nap-thesvg-30724.svg?hash=1640449820"
-                                style="width: 39px; height: 39px;" alt=""> Thủ thuật & Tin Tức</a>
-                        <a href="#" class="nav-link fw-bold" style="font-size: 0.83rem;"><img
-                                src="https://cdn.divineshop.vn/image/catalog/Anh/Icon%20svg/Gioi-thieu-ban-be-87652.svg?hash=1640449820"
-                                style="width: 39px; height: 39px;" alt=""> Giới thiệu bạn bè</a>
-                        <a href="#" class="nav-link fw-bold" style="font-size: 0.83rem;"><img
-                                src="https://cdn.divineshop.vn/image/catalog/Anh/Icon%20svg/Lien-he-hop-tac-33199.svg?hash=1640449820"
-                                style="width: 39px; height: 39px;" alt=""> Liên hệ hợp tác</a>
-                        <a href="#" class="nav-link fw-bold" style="font-size: 0.83rem;"><img
-                                src="https://cdn.divineshop.vn/image/catalog/Anh/Icon%20svg/Uu-dai-khach-vip-79547.svg?hash=1640449820"
-                                style="width: 39px; height: 39px;" alt=""> Ưu đãi khách hàng VIP</a>
-                    </div>
+      </div>
+    </div>
+    <script type="text/javascript">
+      const myModal = document.getElementById('myModal')
+      const myInput = document.getElementById('myInput')
+    
+      myModal.addEventListener('shown.bs.modal', () => {
+        myInput.focus()
+      })
+    </script>
+  </header>
+  <main>
+    <div class="py-3">
+      <div class="container" style="margin-top: 200px">
+        <section>
+          <div class="row">
+            <div class="col-2">
+              <div class="d-flex flex-column justify-content-between rounded p-2 bg-white h-100">
+                <li class="list-group-item border-0 p-0"><a href="#" class="w-100 text-start btn p-0 ps-1 py-1" style="font-size: 0.87rem;"><img class="me-1" src="https://cdn.divineshop.vn/image/catalog/Anh/Icon%20svg/giaitri-25627.svg?hash=1640449820" alt="" width="21px" height="18px"> Giải trí</a></li>
+                <li class="list-group-item border-0 p-0"><a href="#" class="w-100 text-start btn p-0 ps-1 py-1" style="font-size: 0.87rem;"><img class="me-1" src="https://cdn.divineshop.vn/image/catalog/Anh/Icon%20svg/lamviec-71000.svg?hash=1640449820" alt="" width="21px" height="18px"> Làm việc</a></li>
+                <li class="list-group-item border-0 p-0"><a href="#" class="w-100 text-start btn p-0 ps-1 py-1" style="font-size: 0.87rem;"><img class="me-1" src="https://cdn.divineshop.vn/image/catalog/Anh/Icon%20svg/lamviec-71000.svg?hash=1640449820" alt="" width="21px" height="18px"> Học tập</a></li>
+                <li class="list-group-item border-0 p-0"><a href="#" class="w-100 text-start btn p-0 ps-1 py-1" style="font-size: 0.87rem;"><img class="me-1" src="https://cdn.divineshop.vn/image/catalog/Banner/Icon/Steam-66507.svg?hash=1640449899" alt="" width="21px" height="18px"> Game Steam</a></li>
+                <li class="list-group-item border-0 p-0"><a href="#" class="w-100 text-start btn p-0 ps-1 py-1" style="font-size: 0.87rem;"><img class="me-1" src="https://cdn.divineshop.vn/image/catalog/Banner/Icon/Logo%20Origin-26150.svg?hash=1640449899" alt="" width="21px" height="18px"> Edit Ảnh - Video</a></li>
+                <li class="list-group-item border-0 p-0"><a href="#" class="w-100 text-start btn p-0 ps-1 py-1" style="font-size: 0.87rem;"><img class="me-1" src="https://cdn.divineshop.vn/image/catalog/Banner/Icon/roblox2-83248.svg?hash=1649948527" alt="" width="21px" height="18px"> Window, Office</a></li>
+                <li class="list-group-item border-0 p-0"><a href="#" class="w-100 text-start btn p-0 ps-1 py-1" style="font-size: 0.87rem;"><img class="me-1" src="https://cdn.divineshop.vn/image/catalog/Banner/Icon/Xbox%20Logo-88261.svg?hash=1640449899" alt="" width="21px" height="18px"> Google Drive</a></li>
+                <li class="list-group-item border-0 p-0"><a href="#" class="w-100 text-start btn p-0 ps-1 py-1" style="font-size: 0.87rem;"><img class="me-1" src="https://cdn.divineshop.vn/image/catalog/Banner/Icon/Steam%20Wallet-41454.svg?hash=1640449899" alt="" width="21px" height="18px"> Steam Wallet</a></li>
+                <li class="list-group-item border-0 p-0"><a href="#" class="w-100 text-start btn p-0 ps-1 py-1" style="font-size: 0.87rem;"><img class="me-1" src="https://cdn.divineshop.vn/image/catalog/Banner/Icon/Signal-61321.svg?hash=1640449899" alt="" width="21px" height="18px"> Gói Data Mobile</a></li>
+                <li class="list-group-item border-0 p-0"><a href="#" class="w-100 text-start btn p-0 ps-1 py-1" style="font-size: 0.87rem;"><img class="me-1" src="https://cdn.divineshop.vn/image/catalog/Banner/Icon/Google%20Play-42608.svg?hash=1640449899" alt="" width="21px" height="18px"> Google Play, iTunes</a></li>
+              </div>
+            </div>
+            <div class="col-7">
+              <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <img src="https://cdn.divineshop.vn/image/catalog/Anh-SP/Kh%C3%A1c/chatGPT-70878.jpg?hash=1681283148" class="d-block w-100 rounded" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://cdn.divineshop.vn/image/catalog/Anh/24.12.21/t%E1%BB%91i%20%C6%B0u%20c%C3%B4ng%20vi%E1%BB%87c-45178.png?hash=1640349471" class="d-block w-100 rounded" alt="...">
+                  </div>
+                  <div class="carousel-item">
+                    <img src="https://cdn.divineshop.vn/image/catalog/Banner/banner%20Google%20One%20(3)-10567.png?hash=1658937523" class="d-block w-100 rounded" alt="...">
+                  </div>
                 </div>
             </div>
         </div>
@@ -1320,77 +1486,24 @@
                 </div>
             </div>
         </div>
-        <div class="container">
-            <div class="row mt-5">
-                <div class="col-3">
-                    <h3>Chi tiết sản phẩm</h3>
-                </div>
-                <div class="col-6">
-                    <h3>Giới thiệu</h3>
-                    <p>Spotify là ứng dụng nghe nhạc bản quyền nổi tiếng trên toàn thế giới. Spotify có hàng triệu bản
-                        nhạc
-                        từ tất
-                        cả mọi nơi trên thế giới bao gồm cả các bài hát ở Việt Nam. </p>
-                </div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-10">
-                    <h5>Bình luận</h5>
-                    <p>Thời gian phản hồi trung bình: 5 phút!</p>
-                    <div class="mb-3">
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
-                    </div>
-                    <div class="d-flex justify-content-end">
-                        <button type="button" class="btn btn-primary"><i class="fa-solid fa-paper-plane"></i> Gửi bình
-                            luận
-                        </button>
-                    </div>
-                    <div class="row">
-                        <div class="col-2">
-                            <img class="img-fluid rounded-circle"
-                                src="https://cdn.divineshop.vn/image/avatar/452043.jpg?hash=1711526851" alt="">
-                        </div>
-                        <div class="col-10">
-                            <h6>Chương Võ Hoàng</h6>
-                            <p>Bình luận vào 2024-03-27 15:10:55</p>
-                            <p>tài khoản đã từng mua gói 1 năm bây giờ tiếp tục mua thêm có được ko vậy shop?</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section>
-        <div class="container">
-            <h2>Tìm kiếm sản phẩm</h2>
-            <div class="d-flex justify-content-between align-items-center">
-                <div class="col-3">
-                    <select class="form-select" aria-label="Default select example">
-                        <option selected>Open this select menu</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                </div>
-                <div class="col-6">
-                    <div class="row">
-                        <div class="col-2 p-0 align-self-center fw-bold text-end" style="font-size: 0.8rem;">Mức giá
-                        </div>
-                        <div class="col-5">
-                            <input type="text" class="form-control" placeholder="Mức giá từ">
-                        </div>
-                        <div class="col-5">
-                            <input type="text" class="form-control" placeholder="Mức giá đến">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-1">
-                    <button type="button" class="btn btn-primary w-100"><i class="fa-solid fa-filter"></i>
-                        Lọc
-                    </button>
-                </div>
-            </div>
+        <div class="col-1"><button type="button" class="btn btn-primary w-100"><i class="fa-solid fa-filter"></i> Lọc</button></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container mt-3">
+      <div class="row">
+        <div class="col-3">
+          <div class="list-group">
+            <button type="button" class="py-3 px-4 text-secondary list-group-item list-group-item-action rounded rounded-bottom-0"><i class="fa-solid me-2 fa-user"></i> Tài khoản</button>
+            <button type="button" class="py-3 px-4 text-secondary list-group-item list-group-item-action"><i class="fa-solid me-2 fa-cart-shopping"></i> Lịch sử đơn hàng</button>
+            <button type="button" class="py-3 px-4 text-secondary list-group-item list-group-item-action"><i class="fa-solid me-2 fa-credit-card"></i> Lịch sử giao dịch</button>
+            <button type="button" class="py-3 px-4 text-secondary list-group-item list-group-item-action active"><i class="fa-solid me-2 fa-user-lock"></i> Mật khẩu và bảo mật</button>
+            <button type="button" class="py-3 px-4 text-secondary list-group-item list-group-item-action"><i class="fa-solid me-2 fa-comment"></i> Bình luận của tôi</button>
+            <button type="button" class="py-3 px-4 text-secondary list-group-item list-group-item-action"><i class="fa-solid me-2 fa-heart"></i> Sản phẩm yêu thích</button>
+            <button type="button" class="py-3 px-4 text-secondary list-group-item list-group-item-action"><i class="fa-solid me-2 fa-link"></i> Giới thiệu bạn bè</button>
+          </div>
         </div>
     </section>
     <section>
@@ -2454,6 +2567,7 @@
 </body>
 <script src="../JS/LoginJs.js"></script>
 <script>
+
     $(document).ready(function () {
         $('#submitLoginId').click(function () {
             var email = $('#emailId').val();
@@ -2543,6 +2657,77 @@
                 }
             });
         });
+
+  $(document).ready(function() {
+    // Kiểm tra dữ liệu phiên làm việc khi tải trang
+    $.ajax({
+      url: '/session-data',
+      type: 'GET',
+      success: function(response) {
+        if (response.status) {
+          // Cập nhật UI với dữ liệu phiên làm việc
+          $('#userContainer').html(`
+            <button type="button" class="btn btn-outline-light rounded-circle"><i class="fa-solid fa-user"></i></button>
+            <span style="font-size: 0.83rem;">${response.data.name}</span>
+          `);
+        }
+      }
+    });
+
+    $('#submitLoginId').click(function() {
+      var email = $('#emailId').val();
+      var password = $('#passwordId').val();
+
+      if (email && password) {
+        $.ajax({
+          url: '/login',
+          type: 'POST',
+          data: {
+            email: email,
+            password: password
+          },
+          success: function(response) {
+            if (response.status) {
+              Swal.fire({
+                title: "Thành công!",
+                text: response.message,
+                icon: "success"
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  // Gọi lại API session-data để cập nhật giao diện người dùng
+                  location.reload();
+                  $.ajax({
+                    url: '/session-data',
+                    type: 'GET',
+                    success: function(response) {
+                      if (response.status) {
+                        // Cập nhật UI với dữ liệu phiên làm việc
+                        $('#userContainer').html(`
+                          <button type="button" class="btn btn-outline-light rounded-circle"><i class="fa-solid fa-user"></i></button>
+                          <span style="font-size: 0.83rem;">${response.data.name}</span>
+                        `);
+                      }
+                    }
+                  });
+                }
+              });
+            } else {
+              Swal.fire({
+                title: "Thất bại!",
+                text: response.message,
+                icon: "error"
+              });
+            }
+          }
+        });
+      } else {
+        Swal.fire({
+          title: "Thất bại!",
+          text: "Không được để trống email và mật khẩu.",
+          icon: "error"
+        });
+      }
+
     });
 
     $(document).ready(function () {
