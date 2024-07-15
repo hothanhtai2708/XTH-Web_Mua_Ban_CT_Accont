@@ -14,14 +14,14 @@ public class LoginM {
     private String name;
     private String email;
     private String password;
-    private boolean isAdmin;
+    private Boolean admin;
 
     public static LoginM convertAccountEToLoginM(AccountE accountE){
         return LoginM.builder()
                 .name(accountE.getUsername())
                 .email(accountE.getEmail())
                 .password(accountE.getHashedPassword())
-                .isAdmin(accountE.isAdmin())
+                .admin(accountE.getIsAdmin())
                 .build();
     }
 }
