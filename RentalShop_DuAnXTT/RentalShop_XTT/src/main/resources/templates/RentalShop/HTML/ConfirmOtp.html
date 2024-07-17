@@ -10,6 +10,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://kit.fontawesome.com/830d8d2c62.js" crossorigin="anonymous"></script>
     <link rel="icon" type="image/x-icon" href="./img/logo/iconnew.png">
     <title>Divine Clone</title>
@@ -35,7 +37,7 @@
                                 </div>
                                 <p style="font-size: 0.85rem; text-align: center;">Đăng nhập để theo dõi đơn hàng, lưu
                                     danh sách sản phẩm yêu thích và nhận nhiều ưu đãi hấp dẫn</p>
-                                <form action="/confirm-register" method="post" class="space-y-6">
+                                <form id="otpForm" class="space-y-6">
                                     <div class="mb-3" style="display: flex; gap: 15px; justify-content: center;">
                                         <input type="text" class="form-control" name="otp1" id="otp1" maxlength="1"
                                             style="width: 50px; height: 50px; text-align: center; font-size: 1.5rem;">
@@ -50,7 +52,7 @@
                                         <input type="text" class="form-control" name="otp6" id="otp6" maxlength="1"
                                             style="width: 50px; height: 50px; text-align: center; font-size: 1.5rem;">
                                     </div>
-                                    <button type="submit" class="btn w-100 mt-3 btn-primary">Xác nhận OTP</button>
+                                    <button type="submit" class="btn w-100 mt-3 btn-primary" id="ConfirmOtpId">Xác nhận OTP</button>
                                 </form>
                                 <div>
                                     <span th:if="${error}" th:text="${error}"  style="color: red;"></span>
@@ -72,6 +74,80 @@
         </div>
     </section>
 
+<!--    <script src="/templates/RentalShop/JS/ConfirmOtpJs.js"></script>-->
+    <script>
+        $(document).ready(function () {
+            $('#ConfirmOtpId').click(function (event) {
+                event.preventDefault(); // Ngăn chặn hành vi mặc định của nút submit
+
+                // Collect OTP inputs
+                var otp1 = $('#otp1').val();
+                var otp2 = $('#otp2').val();
+                var otp3 = $('#otp3').val();
+                var otp4 = $('#otp4').val();
+                var otp5 = $('#otp5').val();
+                var otp6 = $('#otp6').val();
+
+                // Combine OTP
+                var otp = otp1 + otp2 + otp3 + otp4 + otp5 + otp6;
+
+                // Prepare data to send
+                var formData = {
+                    otp: otp // Gửi mã OTP đã nhập
+                };
+
+                // Send POST request
+                $.ajax({
+                    type: 'POST',
+                    url: '/confirm-register', // Địa chỉ API của bạn
+                    data: formData,
+                    success: function (response) {
+                        if (response.success) {
+                            Swal.fire({
+                                title: "Thành công !",
+                                text: "Bạn đã đăng ký tài khoảng thành công!",
+                                icon: "success"
+                            }).then(() => {
+                                location.href = "/login111"; // Chuyển hướng tới trang đăng nhập
+                            });
+                        } else {
+                            // Xử lý khi yêu cầu thất bại
+                            Swal.fire({
+                                title: "Thất bại !",
+                                text: "Mã Otp Không đúng!", // Hiển thị thông báo lỗi từ máy chủ
+                                icon: "error"
+                            }).then(() => {
+                                // Xóa hết giá trị trong các input OTP
+                                $('#otp1').val('');
+                                $('#otp2').val('');
+                                $('#otp3').val('');
+                                $('#otp4').val('');
+                                $('#otp5').val('');
+                                $('#otp6').val('');
+                            });
+                        }
+                    },
+                    error: function () {
+                        // Xử lý khi yêu cầu thất bại
+                        Swal.fire({
+                            title: "Thất bại !",
+                            text: "Mã Otp Không đúng!", // Hiển thị thông báo lỗi từ máy chủ
+                            icon: "error"
+                        }).then(() => {
+                            // Xóa hết giá trị trong các input OTP
+                            $('#otp1').val('');
+                            $('#otp2').val('');
+                            $('#otp3').val('');
+                            $('#otp4').val('');
+                            $('#otp5').val('');
+                            $('#otp6').val('');
+                        });
+                    }
+                });
+            });
+        });
+
+    </script>
 </body>
 
 </html>

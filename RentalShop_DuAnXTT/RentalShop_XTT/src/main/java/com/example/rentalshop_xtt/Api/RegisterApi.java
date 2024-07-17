@@ -29,10 +29,10 @@ public class RegisterApi {
     @Autowired
     HttpSession httpSession;
 
-    @PostMapping("/registers")
+    @PostMapping("/register")
     public ResponseEntity<?> register(@ModelAttribute AccountDTO accountDTO,
                                       @RequestParam("password") String password,
-                                      @RequestParam("passwords") String passwords) {
+                                      @RequestParam("confirmPassword") String confirmPassword) {
         Map<String, Object> result = new HashMap<>();
         try {
             boolean checkExistEmail = !registerService.existsByEmail(accountDTO.getEmail());
@@ -50,25 +50,25 @@ public class RegisterApi {
                 result.put("success", false);
                 result.put("message", "Password không hợp lệ!");
                 return ResponseEntity.badRequest().body(result);
-            } else if (passwords == null || passwords.length() < 3 || passwords.length() > 16) {
+            } else if (confirmPassword == null || confirmPassword.length() < 3 || confirmPassword.length() > 16) {
                 result.put("success", false);
                 result.put("message", "Password nhập lại không hợp lệ!");
                 return ResponseEntity.badRequest().body(result);
-            } else if (!password.equals(passwords)) {
+            } else if (!password.equals(confirmPassword)) {
                 result.put("success", false);
                 result.put("message", "Password không giống nhau!");
                 return ResponseEntity.badRequest().body(result);
             } else {
                 // Lưu tạm thời tài khoản vào session
                 httpSession.setAttribute("tempAccount", accountDTO);
-                httpSession.setAttribute("tempPassword", passwords);
+                httpSession.setAttribute("tempPassword", confirmPassword);
 
                 String Otp = generateOtp();
                 httpSession.setAttribute("otp", Otp);
                 httpSession.setAttribute("account", accountDTO);
                 mailerService.sendOtpEmail(accountDTO.getEmail(), Otp);
                 // Hash mật khẩu
-                String hashedPassword = PasswordEncoderUtil.encodePassword(passwords);
+                String hashedPassword = PasswordEncoderUtil.encodePassword(confirmPassword);
                 accountDTO.setHashedPassword(hashedPassword);
 
                 result.put("success", true);
@@ -85,20 +85,14 @@ public class RegisterApi {
     }
 
     @PostMapping("/confirm-register")
-    public ResponseEntity<?> confirmRegister(@RequestParam("otp1") String confirm1,
-                                             @RequestParam("otp2") String confirm2,
-                                             @RequestParam("otp3") String confirm3,
-                                             @RequestParam("otp4") String confirm4,
-                                             @RequestParam("otp5") String confirm5,
-                                             @RequestParam("otp6") String confirm6) {
+    public ResponseEntity<?> confirmRegister(@RequestParam("otp") String confirmotp) {
         Map<String, Object> result = new HashMap<>();
         try {
-            String Otp = confirm1 + confirm2 + confirm3 + confirm4 + confirm5 + confirm6;
             String OtpServer = (String) httpSession.getAttribute("otp");
             AccountDTO accountDTO = (AccountDTO) httpSession.getAttribute("tempAccount");
             String password = (String) httpSession.getAttribute("tempPassword");
 
-            if (Otp.equals(OtpServer)) {
+            if (confirmotp.equals(OtpServer)) {
                 // Hash mật khẩu
                 String hashedPassword = PasswordEncoderUtil.encodePassword(password);
                 accountDTO.setHashedPassword(hashedPassword);
