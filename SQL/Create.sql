@@ -46,10 +46,13 @@ CREATE TABLE Product
 (
     product_id   int IDENTITY (1,1) PRIMARY KEY,
     product_name nvarchar(255) NOT NULL,
+    accountgame nvarchar(255),
+    passwordgame nvarchar(255),
     price        float,
-    quantity     int,
+    category nvarchar(255),
     description  nvarchar(max),
-    pictures     varchar(max),
+    avatar     varchar(max),
+    picture varchar(max),
     slug_url     varchar(255) default '',
 );
 
