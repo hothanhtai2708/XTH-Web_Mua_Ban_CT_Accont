@@ -49,7 +49,6 @@ public class LoginApi {
         }
     }
 
-
     @GetMapping("/session-data")
     public ResponseEntity<?> getSessionData() {
         Map<String, Object> result = new HashMap<>();
@@ -66,5 +65,4 @@ public class LoginApi {
             return ResponseEntity.ok(result);
         }
     }
-
 }
