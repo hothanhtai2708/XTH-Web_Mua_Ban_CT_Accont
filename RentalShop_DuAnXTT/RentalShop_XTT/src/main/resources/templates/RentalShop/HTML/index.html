@@ -68,7 +68,7 @@
         <nav class="navbar navbar-expand-lg">
           <div class="container">
             <a class="navbar-brand text-white fw-bold" href="/index">
-              <img src="https://cdn.divineshop.vn/static/b1402e84a947ed36cebe9799e47f61c2.svg"  alt="" style="width: 49px; height: 49px;">
+              <img src="/Library/banner logo/LogoShop.jpg"  alt="" style="width: 70px; height: 70px;">
               Divine Shop
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -338,6 +338,44 @@
                     <img src="https://cdn.divineshop.vn/image/catalog/Banner/banner%20Google%20One%20(3)-10567.png?hash=1658937523" class="d-block w-100 rounded" alt="...">
                   </div>
                 </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+            </div>
+            <div class="col-3">
+              <div class="row h-100">
+                <div class="col-12 mb-3"><a href="#"><img class="rounded" width="100%" height="100%" src="https://cdn.divineshop.vn/image/catalog/Banner/VPN%20(3)-84756.png?hash=1707128734" alt=""></a></div>
+                <div class="col-12 mt-3"><a href="#"><img class="rounded" width="100%" height="100%" src="https://cdn.divineshop.vn/image/catalog/Banner/Spotify%20(3)-18327.png?hash=1707128744" alt=""></a></div>
+              </div>
+             
+            </div>
+          </div>
+        </section>
+
+<!--        <section>-->
+<!--          <div class="row mt-4">-->
+<!--            <div class="col-3">-->
+<!--              <img src="https://cdn.divineshop.vn/image/catalog/Banner/Steam%20(3)-52065.png?hash=1707128754" class="img-fluid rounded" alt="">-->
+<!--            </div>-->
+<!--            <div class="col-3">-->
+<!--              <img src="https://cdn.divineshop.vn/image/catalog/Banner/Discord-55203.png?hash=1707128822" class="img-fluid rounded" alt="">-->
+<!--            </div>-->
+<!--            <div class="col-3">-->
+<!--              <img src="https://cdn.divineshop.vn/image/catalog/Banner/gmail%20(3)-89591.png?hash=1707128794" class="img-fluid rounded" alt="">-->
+<!--            </div>-->
+<!--            <div class="col-3">-->
+<!--              <img src="https://cdn.divineshop.vn/image/catalog/Banner/Microsoft%20Office%20(3)-13556.png?hash=1707128807" class="img-fluid rounded" alt="">-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </section>-->
+
             </div>
         </div>
         <!-- Modal -->
@@ -448,6 +486,7 @@
                                     <span th:if="${error}" th:text="${error}" style="color: red;"></span>
                                 </div>
                             </div>
+
 
                             <div class="col-6">
                                 <div class="d-flex align-items-center justify-content-center h-100">
@@ -1357,6 +1396,34 @@
                 </div>
             </div>
         </div>
+
+  
+        <div class="col-6 col-md-2 mb-3">
+          <h6>TÀI KHOẢN</h6>
+          <ul class="nav flex-column" style="font-size: 0.9rem;">
+            <li class="nav-item"><a href="#" class="nav-link p-0 text-body-secondary">Đăng nhập</a></li>
+            <li class="nav-item"><a href="#" class="nav-link p-0 text-body-secondary">Đăng ký</a></li>
+          </ul>
+        </div>
+  
+        <div class="col-6 col-md-3 mb-3">
+          <h6>LIÊN HỆ</h6>
+          <ul class="nav flex-column" style="font-size: 0.9rem;">
+            <li class="nav-item"><a href="#" class="nav-link p-0 text-body-secondary">Hotline tự động <span class="text-danger">1900 633 305</span></a></li>
+            <li class="nav-item"><a href="#" class="nav-link p-0 text-body-secondary">Liên hệ Hỗ trợ</a></li>
+            <li class="nav-item"><a href="#" class="nav-link p-0 text-body-secondary">Chat với CSKH</a></li>
+          </ul>
+        </div>
+  
+        <div class="col-md-5 mb-3">
+          <img src="https://images.dmca.com/Badges/_dmca_premi_badge_2.png?ID=18522dc6-fdd6-4b49-ab40-395a79849050" class="img-fluid float-end" alt="DMCA.com Protection Status">
+        </div>
+      </div>
+    </div>
+  </footer>
+</body>
+<script src="/JS/LoginJs.js"></script>
+
         <div class="container-fluid bg-white">
             <div class="container py-3">
                 <a class="d-flex align-items-center gap-3 nav-link" href="#">
@@ -2729,6 +2796,7 @@
       }
 
     });
+
 
     $(document).ready(function () {
         $('#ConfirmOtpId').click(function () {
