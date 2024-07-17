@@ -12,6 +12,6 @@ public class LoginController {
 
     @GetMapping("/index")
     public String index() {
-        return "RentalShop/HTML/index";
+        return "RentalShop/HTML/test";
     }
 }
