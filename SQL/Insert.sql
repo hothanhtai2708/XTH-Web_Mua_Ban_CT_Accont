@@ -1,4 +1,4 @@
-use Mua_Ban_Acconut
+﻿use Mua_Ban_Acconut
 go
 
 INSERT INTO Account (username, email, hashed_password, is_admin)
@@ -11,6 +11,7 @@ INSERT INTO Account (username, email, hashed_password, is_admin)
 VALUES ('site_user', 'abc@gmail.com', '$2a$12$qTSuT5h7Y3tsXQ/YO63iEecCyKmu.Bgg0K6Lr.lktxdAwxc8MhJE6', 0);
 go
 
+
 INSERT INTO Product (product_name, price, quantity, description, pictures, slug_url)
 VALUES 
 ('Laptop Dell XPS 13', 1200.50, 10, 'Laptop Dell XPS 13 với bộ vi xử lý Intel Core i7, RAM 16GB, SSD 512GB.', 'dell_xps_13.jpg', 'laptop-dell-xps-13'),
@@ -19,3 +20,15 @@ VALUES
 ('Sony WH-1000XM4', 349.99, 30, 'Tai nghe Sony WH-1000XM4 với công nghệ chống ồn, thời lượng pin 30 giờ.', 'sony_wh_1000xm4.jpg', 'sony-wh-1000xm4'),
 ('MacBook Pro 16', 2399.99, 5, 'MacBook Pro 16 inch với chip Apple M1 Pro, RAM 16GB, SSD 1TB.', 'macbook_pro_16.jpg', 'macbook-pro-16');
 go
+
+select * from Account
+select * from [user]
+
+-- Xóa bản ghi liên quan từ bảng user
+DELETE FROM [user];
+DBCC CHECKIDENT ('[user]', RESEED, 0);
+
+-- Xóa bản ghi từ bảng Account và đặt lại IDENTITY
+DELETE FROM Account;
+DBCC CHECKIDENT ('Account', RESEED, 0);
+
