@@ -6,11 +6,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class RegisterController {
 
-    @GetMapping("/registers")
+    @GetMapping("/register")
     public String regesters(){
         return "RentalShop/HTML/register";
     }
-    @GetMapping("/confirm-registers")
+    @GetMapping("/confirm-register")
     public String confirmOTPs() {
         return "RentalShop/HTML/ConfirmOtp";
     }
