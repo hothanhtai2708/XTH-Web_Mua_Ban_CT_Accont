@@ -14,4 +14,9 @@ public class LoginController {
     public String index() {
         return "RentalShop/HTML/test";
     }
+
+    @GetMapping("/login123")
+    public String login() {
+        return "RentalShop/HTML/login";
+    }
 }

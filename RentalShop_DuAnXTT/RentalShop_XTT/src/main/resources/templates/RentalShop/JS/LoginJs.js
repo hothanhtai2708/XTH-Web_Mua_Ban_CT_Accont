@@ -1,24 +1,46 @@
-$(document).ready(function () {
-    // Kiểm tra dữ liệu phiên làm việc khi tải trang
-    $.ajax({
-        url: '/session-data',
-        type: 'GET',
-        success: function (response) {
-            if (response.status) {
-                // Cập nhật UI với dữ liệu phiên làm việc
-                $('#userContainer').html(`
-            <button type="button" class="btn btn-outline-light rounded-circle"><i class="fa-solid fa-user"></i></button>
-            <span style="font-size: 0.83rem;">${response.data.name}</span>
-          `);
-            }
+$(document).ready(function() {
+    $('#loginForm').on('submit', function(e) {
+        e.preventDefault();
+
+        var email = $('#email').val();
+        var password = $('#password').val();
+        var valid = true;
+
+        // Reset error messages
+        $('#emailError').text('');
+        $('#passwordError').text('');
+
+        // Validate email
+        if (!email) {
+            Swal.fire({
+                title: 'Thất bại!',
+                text: 'Email không được để trống.',
+                icon: 'error'
+            });
+            $('#emailError').text('Email không được để trống.');
+            valid = false;
+        } else if (!validateEmail(email)) {
+            Swal.fire({
+                title: 'Thất bại!',
+                text: 'Email không hợp lệ.',
+                icon: 'error'
+            });
+            $('#emailError').text('Email không hợp lệ.');
+            valid = false;
         }
-    });
 
-    $('#submitLoginId').click(function () {
-        var email = $('#emailId').val();
-        var password = $('#passwordId').val();
+        // Validate password
+        if (!password) {
+            Swal.fire({
+                title: 'Thất bại!',
+                text: 'Mật khẩu không được để trống.',
+                icon: 'error'
+            });
+            $('#passwordError').text('Mật khẩu không được để trống.');
+            valid = false;
+        }
 
-        if (email && password) {
+        if (valid) {
             $.ajax({
                 url: '/login',
                 type: 'POST',
@@ -26,47 +48,40 @@ $(document).ready(function () {
                     email: email,
                     password: password
                 },
-                success: function (response) {
+                success: function(response) {
                     if (response.status) {
                         Swal.fire({
-                            title: "Thành công!",
+                            title: 'Thành công!',
                             text: response.message,
-                            icon: "success"
+                            icon: 'success'
                         }).then((result) => {
                             if (result.isConfirmed) {
-                                // Gọi lại API session-data để cập nhật giao diện người dùng
-                                location.reload();
-                                $.ajax({
-                                    url: '/session-data',
-                                    type: 'GET',
-                                    success: function (response) {
-                                        if (response.status) {
-                                            // Cập nhật UI với dữ liệu phiên làm việc
-                                            $('#userContainer').html(`
-                          <button type="button" class="btn btn-outline-light rounded-circle"><i class="fa-solid fa-user"></i></button>
-                          <span style="font-size: 0.83rem;">${response.data.name}</span>
-                        `);
-                                        }
-                                    }
-                                });
+                                window.location.href = "/index";
                             }
                         });
+
                     } else {
                         Swal.fire({
-                            title: "Thất bại!",
+                            title: 'Thất bại!',
                             text: response.message,
-                            icon: "error"
+                            icon: 'error'
                         });
                     }
+                },
+                error: function(error) {
+                    console.error('Đã xảy ra lỗi:', error);
+                    Swal.fire({
+                        title: 'Lỗi!',
+                        text: 'Đã xảy ra lỗi, vui lòng thử lại sau.',
+                        icon: 'error'
+                    });
                 }
-            });
-        } else {
-            Swal.fire({
-                title: "Thất bại!",
-                text: "Không được để trống email và mật khẩu.",
-                icon: "error"
             });
         }
     });
-});
 
+    function validateEmail(email) {
+        var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+    }
+});

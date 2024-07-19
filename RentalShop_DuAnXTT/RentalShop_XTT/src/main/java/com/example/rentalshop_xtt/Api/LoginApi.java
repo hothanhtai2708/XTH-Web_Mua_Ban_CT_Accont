@@ -49,20 +49,20 @@ public class LoginApi {
         }
     }
 
-    @GetMapping("/session-data")
-    public ResponseEntity<?> getSessionData() {
-        Map<String, Object> result = new HashMap<>();
-        String email = session.getAttribute("email").toString();
-        LoginM loginM = loginService.findByEmail(email);
-        if (email != null) {
-            result.put("status", true);
-            result.put("data", loginM);
-            result.put("message","Call API lấy dữ liệu thành công !");
-            return ResponseEntity.ok(result);
-        } else {
-            result.put("status", false);
-            result.put("data", null);
-            return ResponseEntity.ok(result);
-        }
-    }
+//    @GetMapping("/session-data")
+//    public ResponseEntity<?> getSessionData() {
+//        Map<String, Object> result = new HashMap<>();
+//        String email = session.getAttribute("email").toString();
+//        LoginM loginM = loginService.findByEmail(email);
+//        if (email != null) {
+//            result.put("status", true);
+//            result.put("data", loginM);
+//            result.put("message","Call API lấy dữ liệu thành công !");
+//            return ResponseEntity.ok(result);
+//        } else {
+//            result.put("status", false);
+//            result.put("data", null);
+//            return ResponseEntity.ok(result);
+//        }
+//    }
 }
