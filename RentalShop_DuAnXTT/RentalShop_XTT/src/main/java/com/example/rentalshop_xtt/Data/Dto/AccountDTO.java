@@ -27,7 +27,7 @@ public class AccountDTO {
         return AccountE.builder()
                 .username(accountDTO.getUsername())
                 .email(accountDTO.getEmail())
-                .hashedPassword(PasswordEncoderUtil.encodePassword(accountDTO.getHashedPassword()))
+                .hashedPassword(accountDTO.getHashedPassword())
                 .isAdmin(accountDTO.getIsAdmin())
                 .build();
     }

@@ -68,8 +68,8 @@ public class RegisterApi {
                 httpSession.setAttribute("account", accountDTO);
                 mailerService.sendOtpEmail(accountDTO.getEmail(), Otp);
                 // Hash mật khẩu
-                String hashedPassword = PasswordEncoderUtil.encodePassword(confirmPassword);
-                accountDTO.setHashedPassword(hashedPassword);
+//                String hashedPassword = PasswordEncoderUtil.encodePassword(confirmPassword);
+//                accountDTO.setHashedPassword(hashedPassword);
 
                 result.put("success", true);
                 result.put("message", "OTP đã được gửi!");

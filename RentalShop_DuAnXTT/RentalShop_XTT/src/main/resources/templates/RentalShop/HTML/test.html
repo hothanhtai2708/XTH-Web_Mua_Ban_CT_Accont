@@ -6,8 +6,9 @@
   <link href="https://fonts.cdnfonts.com/css/proxima-nova-condensed" rel="stylesheet">                
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>  
-  <script src="https://kit.fontawesome.com/830d8d2c62.js" crossorigin="anonymous"></script>  
-  <link rel="icon" type="image/x-icon" href="./img/logo/iconnew.png">
+  <script src="https://kit.fontawesome.com/830d8d2c62.js" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="./img/logo/iconnew.png">
   <title>Divine Clone System Administrator</title>
   <style>
     .list-group-item.active{
@@ -124,7 +125,6 @@
       </nav>
     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" style="max-width: 300px;">
         <div class="offcanvas-body p-0">
-            <!--TanLoc-Begin-->
             <div class="bg-primary text-white p-3" id="div-login-logout" sec:authorize="isAnonymous()">
                 <div class="d-flex align-items-center justify-content-between">
                     <div>
@@ -219,13 +219,13 @@
                         <div id="carouselExampleAutoplaying" class="carousel slide h-100" data-bs-ride="carousel">
                             <div class="carousel-inner h-100">
                                 <div class="carousel-item h-100 active">
-                                    <img src="https://cdn.divineshop.vn/image/catalog/Anh-SP/Kh%C3%A1c/chatGPT-70878.jpg?hash=1681283148" class="d-block h-100 w-100 rounded" alt="...">
+                                    <img src="/Library/banner logo/2.png" class="d-block h-100 w-100 rounded" alt="...">
                                 </div>
                                 <div class="carousel-item h-100">
-                                    <img src="https://cdn.divineshop.vn/image/catalog/Anh/24.12.21/t%E1%BB%91i%20%C6%B0u%20c%C3%B4ng%20vi%E1%BB%87c-45178.png?hash=1640349471" class="d-block h-100 w-100 rounded" alt="...">
+                                    <img src="/Library/banner logo/banner LQ.jpg" class="d-block h-100 w-100 rounded" alt="...">
                                 </div>
                                 <div class="carousel-item h-100">
-                                    <img src="https://cdn.divineshop.vn/image/catalog/Banner/banner%20Google%20One%20(3)-10567.png?hash=1658937523" class="d-block h-100 w-100 rounded" alt="...">
+                                    <img src="/Library/banner logo/banner ff.jpg" class="d-block h-100 w-100 rounded" alt="...">
                                 </div>
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
@@ -240,13 +240,13 @@
                     </div>
                     <div class="col-sm-12 col-lg-4">
                         <div class="row h-100 mt-3 mt-lg-0">
-                            <div class="col-6 col-lg-12 mb-lg-3"><a href="#"><img class="rounded" width="100%" height="100%" src="https://cdn.divineshop.vn/image/catalog/Banner/VPN%20(3)-84756.png?hash=1707128734" alt=""></a></div>
-                            <div class="col-6 col-lg-12 mt-lg-3"><a href="#"><img class="rounded" width="100%" height="100%" src="https://cdn.divineshop.vn/image/catalog/Banner/Spotify%20(3)-18327.png?hash=1707128744" alt=""></a></div>
+                            <div class="col-6 col-lg-12 mb-lg-3"><a href="#"><img class="rounded" width="100%" height="100%" src="/Library/banner logo/banner LQ.jpg" alt=""></a></div>
+                            <div class="col-6 col-lg-12 mt-lg-3"><a href="#"><img class="rounded" width="100%" height="100%" src="/Library/banner logo/2.png" alt=""></a></div>
                         </div>
 
                     </div>
                 </div>
-            </section>e
+            </section>
             <section>
                 <div class="mt-5">
                     <div class="d-flex justify-content-between align-items-center">
@@ -255,45 +255,6 @@
                     </div>
                     <p>Danh sách những sản phẩm theo xu hướng mà có thể bạn sẽ thích</p>
                     <div class="row gy-3" id="div-san-pham-noi-bac">
-                        <a class="col-6 col-md-4 col-lg-3 text-decoration-none" href="detail/tai-khoan-netflix-1-thang">
-                            <div class="card border-0 bg-transparent">
-                                <img src="/images/Netflix-1.png" class="card-img-top rounded" alt="Netflix Premium 1 tháng - Tài khoản">
-                                <div class="card-body  px-0">
-                                    <h5 class="card-title" style="font-size: 0.9rem;">Netflix Premium 1 tháng - Tài khoản</h5>
-                                    <div class="d-flex gap-2 align-items-center">
-                              <p style="font-size: 0.9rem;" class="m-0 fw-bold">98.800&nbsp;₫</p>
-                              <p style="font-size: 0.9rem;" class="m-0 text-decoration-line-through text-secondary">260.000&nbsp;₫</p>
-                              <p style="font-size: 0.7rem;" class="m-0 text-bg-danger fw-bold rounded p-1">62%</p>
-                           </div>
-                                </div>
-                            </div>
-                        </a>
-                        <a class="col-6 col-md-4 col-lg-3 text-decoration-none" href="detail/tai-khoan-netflix-1-thang">
-                            <div class="card border-0 bg-transparent">
-                                <img src="/images/Netflix-1.png" class="card-img-top rounded" alt="Netflix Premium 1 tháng - Tài khoản">
-                                <div class="card-body  px-0">
-                                    <h5 class="card-title" style="font-size: 0.9rem;">Netflix Premium 1 tháng - Tài khoản</h5>
-                                    <div class="d-flex gap-2 align-items-center">
-                              <p style="font-size: 0.9rem;" class="m-0 fw-bold">98.800&nbsp;₫</p>
-                              <p style="font-size: 0.9rem;" class="m-0 text-decoration-line-through text-secondary">260.000&nbsp;₫</p>
-                              <p style="font-size: 0.7rem;" class="m-0 text-bg-danger fw-bold rounded p-1">62%</p>
-                           </div>
-                                </div>
-                            </div>
-                        </a>
-                        <a class="col-6 col-md-4 col-lg-3 text-decoration-none" href="detail/tai-khoan-netflix-1-thang">
-                            <div class="card border-0 bg-transparent">
-                                <img src="/images/Netflix-1.png" class="card-img-top rounded" alt="Netflix Premium 1 tháng - Tài khoản">
-                                <div class="card-body  px-0">
-                                    <h5 class="card-title" style="font-size: 0.9rem;">Netflix Premium 1 tháng - Tài khoản</h5>
-                                    <div class="d-flex gap-2 align-items-center">
-                              <p style="font-size: 0.9rem;" class="m-0 fw-bold">98.800&nbsp;₫</p>
-                              <p style="font-size: 0.9rem;" class="m-0 text-decoration-line-through text-secondary">260.000&nbsp;₫</p>
-                              <p style="font-size: 0.7rem;" class="m-0 text-bg-danger fw-bold rounded p-1">62%</p>
-                           </div>
-                                </div>
-                            </div>
-                        </a>
                         <a class="col-6 col-md-4 col-lg-3 text-decoration-none" href="detail/tai-khoan-netflix-1-thang">
                             <div class="card border-0 bg-transparent">
                                 <img src="/images/Netflix-1.png" class="card-img-top rounded" alt="Netflix Premium 1 tháng - Tài khoản">
@@ -467,3 +428,4 @@
     </div>
 </footer>
 <script src="/JS/LoginJs.js"></script>
+<script src="/JS/Product-views.js"></script>
