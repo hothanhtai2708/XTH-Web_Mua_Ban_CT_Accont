@@ -11,10 +11,7 @@
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/830d8d2c62.js" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link rel="icon" type="image/x-icon" href="./img/logo/iconnew.png">
-    <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.min.js"></script>
-
     <title>Divine Clone System Administrator</title>
     <style>
         .list-group-item.active {
@@ -67,7 +64,7 @@
                     <i class="fa-solid fa-bars"></i>
                 </button>
                 <a class="navbar-brand text-white fw-bold d-none d-lg-block">
-                    <img src="/Library/banner logo/LogoShop.png" alt="" style="width: 49px; height: 49px;">
+                    <img src="/Library/banner logo/LogoShop.jpg" alt="" style="width: 49px; height: 49px;">
                     Rental Shop
                 </a>
                 <form class="d-flex" style="width: 35%;" role="search" action="/all-products" method="get"
@@ -152,6 +149,7 @@
         <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel"
             style="max-width: 300px;">
             <div class="offcanvas-body p-0">
+                <!--TanLoc-Begin-->
                 <div class="bg-primary text-white p-3" id="div-login-logout" sec:authorize="isAnonymous()">
                     <div class="d-flex align-items-center justify-content-between">
                         <div>
@@ -267,11 +265,6 @@
                         class="me-2 fa-solid fa-map-location-dot"></i> Đại lý giao dịch</a>
                 <a href="#" class="nav-link text-white" style="font-size: 0.9rem;"><i style="font-size: 1rem;"
                         class="me-2 fa-solid fa-credit-card"></i> Hình thức thanh toán</a>
-                <a href="#" onclick="connectVi()" class="nav-link text-white" style="font-size: 0.9rem;"><i
-                        style="font-size: 1rem;" class="me-2 fa-solid fa-credit-card"></i> CONNET NFT</a>
-                <a href="#" onclick="MintNFT()" class="nav-link text-white" style="font-size: 0.9rem;"><i
-                        style="font-size: 1rem;" class="me-2 fa-solid fa-credit-card"></i> MINT NFT</a>
-
             </div>
         </div>
     </div>
@@ -305,220 +298,172 @@
     <div class="py-3">
         <div class="container">
             <section>
+                <h2>Bộ lọc</h2>
+                <div class="filter">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                            <select class="form-select" id="danhmuc">
+                                <option selected>Choose...</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-2">
+                            <label class="visually-hidden" for="autoSizingSelect">Preference</label>
+                            <select class="form-select" id="theloai">
+                                <option selected>Choose...</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6">
+                            <div class="row align-items-center">
+                                <div class="col-auto">
+                                    <div class="form-label">Mức giá:</div>
+                                </div>
+                                <div class="col">
+                                    <label class="visually-hidden" for="mucgia1">Preference</label>
+                                    <select class="form-select" id="mucgia1">
+                                        <option selected>Choose...</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>
+                                <div class="col-auto">--</div>
+                                <div class="col">
+                                    <label class="visually-hidden" for="mucgia2">Preference</label>
+                                    <select class="form-select" id="mucgia2">
+                                        <option selected>Choose...</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div class="col-md-2">
+                            <button type="button" class="btn btn-primary">lọc</button>
+                            <button type="button" class="btn btn-primary">Xóa tất cả</button>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </section>
+        </div>
+
+        <div class="container p-3">
+            <section>
                 <div class="row">
-                    <div class="col-sm-12 col-lg-8">
-                        <div id="carouselExampleAutoplaying" class="carousel slide h-100" data-bs-ride="carousel">
-                            <div class="carousel-inner h-100">
-                                <div class="carousel-item h-100 active">
-                                    <img src="/Library/banner logo/2.png" class="d-block h-100 w-100 rounded" alt="...">
+                    <h2>Danh mục sản phẩm</h2>
+                    <div class="col-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Account 1</h5>
+                                <p class="card-text">Tài khoản game mạnh mẽ với nhân vật cấp cao, trang bị hiếm, tài
+                                    nguyên phong phú.</p>
+                                <p class="card-text text-dark"><b>
+                                        100.000đ
+                                    </b>
+                                </p>
+                                <div class="d-grid gap-2">
+                                    <button type="button" class="btn btn-outline-primary" disabled>
+                                        <i class="fa-solid fa-bag-shopping"></i>Mua ngay</button>
                                 </div>
-                                <div class="carousel-item h-100">
-                                    <img src="/Library/banner logo/banner LQ.jpg" class="d-block h-100 w-100 rounded"
-                                        alt="...">
-                                </div>
-                                <div class="carousel-item h-100">
-                                    <img src="/Library/banner logo/banner ff.jpg" class="d-block h-100 w-100 rounded"
-                                        alt="...">
-                                </div>
-                            </div>
-                            <button class="carousel-control-prev" type="button"
-                                data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button"
-                                data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="col-sm-12 col-lg-4">
-                        <div class="row h-100 mt-3 mt-lg-0">
-                            <div class="col-6 col-lg-12 mb-lg-3"><a href="#"><img class="rounded" width="100%"
-                                        height="100%" src="/Library/banner logo/banner LQ.jpg" alt=""></a></div>
-                            <div class="col-6 col-lg-12 mt-lg-3"><a href="#"><img class="rounded" width="100%"
-                                        height="100%" src="/Library/banner logo/2.png" alt=""></a></div>
-                        </div>
 
-                    </div>
-                </div>
-            </section>
-            <section>
-                <div class="mt-5">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <h5 class="m-0 fw-bold">Sản phẩm nổi bật</h5>
-                        <a type="button" class="btn btn-primary fw-bold" style="font-size: 0.8rem;"
-                            href="/all-products">Khám phá</a>
-                    </div>
-                    <p>Danh sách những sản phẩm theo xu hướng mà có thể bạn sẽ thích</p>
-                    <div class="row gy-3" id="div-san-pham-noi-bac">
-                        <a class="col-6 col-md-4 col-lg-3 text-decoration-none" href="detail/tai-khoan-netflix-1-thang">
-                            <div class="card border-0 bg-transparent">
-                                <img src="/images/" class="card-img-top rounded"
-                                    alt="Netflix Premium 1 tháng - Tài khoản">
-                                <div class="card-body  px-0">
-                                    <h5 class="card-title" style="font-size: 0.9rem;">Netflix Premium 1 tháng - Tài
-                                        khoản</h5>
-                                    <div class="d-flex gap-2 align-items-center">
-                                        <p style="font-size: 0.9rem;" class="m-0 fw-bold">98.800&nbsp;₫</p>
-                                        <p style="font-size: 0.9rem;"
-                                            class="m-0 text-decoration-line-through text-secondary">260.000&nbsp;₫</p>
-                                        <p style="font-size: 0.7rem;" class="m-0 text-bg-danger fw-bold rounded p-1">62%
-                                        </p>
-                                    </div>
-                                </div>
                             </div>
-                        </a>
-                        <div>
-                            <button type="button" class="btn btn-danger">Danger</button>
                         </div>
                     </div>
-                    <hr>
-                </div>
-            </section>
 
-            <section>
-                <div class="mt-5">
-                    <h5 class="mb-3 fw-bold">Từ khóa nổi bật</h5>
-                    <div class="row row-gap-3">
-                        <div class="col-4 col-lg-2">
-                            <a href="#" class="nav-link text-white">
-                                <div style="background-color: #3d5a80;"
-                                    class="w-100 h-100 text-center px-2 py-1 px-md-3 py-md-2 px-xl-5 py-xl-4 rounded fw-bold">
-                                    Làm việc</div>
-                            </a>
-                        </div>
-                        <div class="col-4 col-lg-2">
-                            <a href="#" class="nav-link text-white">
-                                <div style="background-color: #98c1d8;"
-                                    class="w-100 h-100 text-center px-2 py-1 px-md-3 py-md-2 px-xl-5 py-xl-4 rounded fw-bold">
-                                    Giải trí</div>
-                            </a>
-                        </div>
-                        <div class="col-4 col-lg-2">
-                            <a href="#" class="nav-link text-white">
-                                <div style="background-color: #ee6c4d;"
-                                    class="w-100 h-100 text-center px-2 py-1 px-md-3 py-md-2 px-xl-5 py-xl-4 rounded fw-bold">
-                                    Học tập</div>
-                            </a>
-                        </div>
-                        <div class="col-4 col-lg-2">
-                            <a href="#" class="nav-link text-white">
-                                <div style="background-color: #293241;"
-                                    class="w-100 h-100 text-center px-2 py-1 px-md-3 py-md-2 px-xl-5 py-xl-4 rounded fw-bold">
-                                    Spotify</div>
-                            </a>
-                        </div>
-                        <div class="col-4 col-lg-2">
-                            <a href="#" class="nav-link text-white">
-                                <div style="background-color: #545b67;"
-                                    class="w-100 h-100 text-center px-2 py-1 px-md-3 py-md-2 px-xl-5 py-xl-4 rounded fw-bold">
-                                    Wallet</div>
-                            </a>
-                        </div>
-                        <div class="col-4 col-lg-2">
-                            <a href="#" class="nav-link text-white">
-                                <div style="background-color: #767c85;"
-                                    class="w-100 h-100 text-center px-2 py-1 px-md-3 py-md-2 px-xl-5 py-xl-4 rounded fw-bold">
-                                    Youtube</div>
-                            </a>
+                    <div class="col-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Account 1</h5>
+                                <p class="card-text">Tài khoản game mạnh mẽ với nhân vật cấp cao, trang bị hiếm, tài
+                                    nguyên phong phú.</p>
+                                <p class="card-text text-dark"><b>
+                                        100.000đ
+                                    </b>
+                                </p>
+                                <div class="d-grid gap-2">
+                                    <button type="button" class="btn btn-outline-primary" disabled>
+                                        <i class="fa-solid fa-bag-shopping"></i>Mua ngay</button>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
+
+                    <div class="col-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Account 1</h5>
+                                <p class="card-text">Tài khoản game mạnh mẽ với nhân vật cấp cao, trang bị hiếm, tài
+                                    nguyên phong phú.</p>
+                                <p class="card-text text-dark"><b>
+                                        100.000đ
+                                    </b>
+                                </p>
+                                <div class="d-grid gap-2">
+                                    <button type="button" class="btn btn-outline-primary" disabled>
+                                        <i class="fa-solid fa-bag-shopping"></i>Mua ngay</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3">
+                        <div class="card" style="width: 18rem;">
+                            <img src="..." class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Account 1</h5>
+                                <p class="card-text">Tài khoản game mạnh mẽ với nhân vật cấp cao, trang bị hiếm, tài
+                                    nguyên phong phú.</p>
+                                <p class="card-text text-dark"><b>
+                                        100.000đ
+                                    </b>
+                                </p>
+                                <div class="d-grid gap-2">
+                                    <button type="button" class="btn btn-outline-primary" disabled>
+                                        <i class="fa-solid fa-bag-shopping"></i>Mua ngay</button>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </section>
         </div>
-        <div class="container-fluid p-0">
-            <section>
-                <div class="mt-5 pb-5"
-                    style="padding-top: 11rem; background-repeat: no-repeat; background-size: 120%; background-color: rgb(0, 13, 33); background-image: url(https://divineshop.vn/static/0de2668c294edf9d5fd8a8647b2c65b6.png);">
-                    <div class="container">
-                        <div
-                            class="d-flex flex-column flex-sm-row row-gap-2 justify-content-between align-items-center">
-                            <div class="border rounded-pill border-1 border-white p-3">
-                                <h5 class="m-0 fw-bold text-white"><i
-                                        class="fa-solid fa-arrow-trend-up text-danger me-2"></i> #Sản phẩm bán chạy nhất
-                                </h5>
-                            </div>
-                            <a type="button" class="btn btn-primary fw-bold" style="font-size: 0.8rem;"
-                                href="/all-products">Khám phá</a>
-                        </div>
-                        <div class="mt-3 row gy-3" id="div-san-pham-ban-chay">
 
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-        </div>
         <div class="container">
             <section>
-                <div class="mt-5">
-                    <h5 class="mb-3 fw-bold">Giá phù hợp</h5>
-                    <div class="row row-gap-3">
-                        <div class="col-4 col-lg-2">
-                            <a href="#" class="nav-link ">
-                                <div
-                                    class="w-100 h-100 text-center px-2 py-1 px-md-3 py-md-2 px-xl-5 py-xl-4 rounded fw-bold bg-white border border-1">
-                                    20.000đ</div>
-                            </a>
-                        </div>
-                        <div class="col-4 col-lg-2">
-                            <a href="#" class="nav-link ">
-                                <div
-                                    class="w-100 h-100 text-center px-2 py-1 px-md-3 py-md-2 px-xl-5 py-xl-4 rounded fw-bold bg-white border border-1">
-                                    50.000đ</div>
-                            </a>
-                        </div>
-                        <div class="col-4 col-lg-2">
-                            <a href="#" class="nav-link ">
-                                <div
-                                    class="w-100 h-100 text-center px-2 py-1 px-md-3 py-md-2 px-xl-5 py-xl-4 rounded fw-bold bg-white border border-1">
-                                    100.000đ</div>
-                            </a>
-                        </div>
-                        <div class="col-4 col-lg-2">
-                            <a href="#" class="nav-link ">
-                                <div
-                                    class="w-100 h-100 text-center px-2 py-1 px-md-3 py-md-2 px-xl-5 py-xl-4 rounded fw-bold bg-white border border-1">
-                                    200.000đ</div>
-                            </a>
-                        </div>
-                        <div class="col-4 col-lg-2">
-                            <a href="#" class="nav-link ">
-                                <div
-                                    class="w-100 h-100 text-center px-2 py-1 px-md-3 py-md-2 px-xl-5 py-xl-4 rounded fw-bold bg-white border border-1">
-                                    500.000đ</div>
-                            </a>
-                        </div>
-                        <div class="col-4 col-lg-2">
-                            <a href="#" class="nav-link ">
-                                <div
-                                    class="w-100 h-100 text-center px-2 py-1 px-md-3 py-md-2 px-xl-5 py-xl-4 rounded fw-bold bg-white border border-1">
-                                    1.000.000đ</div>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+              
             </section>
 
             <section>
-                <div class="mt-5">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <h5 class="m-0 fw-bold">Sản phẩm Giảm giá </h5>
-                        <a type="button" class="btn btn-primary fw-bold" style="font-size: 0.8rem;"
-                            href="/all-products">Khám phá</a>
-                    </div>
-                    <p>Danh sách những sản phẩm giảm giá nhiều nhất mà có thể bạn sẽ thích</p>
-                    <div class="row gy-3" id="div-san-pham-giam-gia">
-
-                    </div>
-                    <hr>
-                </div>
+               
             </section>
         </div>
     </div>
 </main>
+
+
+
 <footer th:fragment="footer">
     <div class="container-fluid bg-black " id="goi-y-dang-nhap-dang-ky">
         <div class="container py-5 px-md-1 px-lg-5">
@@ -609,166 +554,5 @@
     </div>
 </footer>
 <script src="/JS/LoginJs.js"></script>
-<script src="/JS/Product-views.js"></script>
-<!-- <script src="/JS/Wallet.js"></script> -->
 
-<script>
-    let publicKey;
-
-    // //tự động kết nối
-    // (async () => {
-    //     await window.phantom.solana.connect();
-    //     publicKey = window.phantom.solana.publicKey.toBase58();
-    // })();
-
-    const connectVi = async () => {
-        await window.phantom.solana.connect();
-
-        publicKey = window.phantom.solana.publicKey.toBase58();
-        console.log(publicKey)
-    }
-
-
-    // //kết nối bằng tay
-    // const connectVi = async () => {
-    //     await window.phantom.solana.connect();
-    //
-    //     publicKey = window.phantom.solana.publicKey.toBase58();
-    //     console.log(publicKey)
-    // }
-
-    // ================= [ MINT NFT] ==================
-    const Prive_key = 'T6i4xYb82eJKE5ov';
-
-    const Mint_NFT = async () => {
-        const img = document.getElementById('productImage');
-        const imageUrl = img.src;
-
-        // Lấy tên tệp từ URL hình ảnh
-        const fileName = imageUrl.substring(imageUrl.lastIndexOf('/') + 1);
-
-        // Tải hình ảnh và lấy loại MIME từ phản hồi
-        const response = await fetch(imageUrl);
-
-        if (!response.ok) {
-            console.error('Không thể tải hình ảnh:', response.statusText);
-            return;
-        }
-
-        // Lấy loại MIME của hình ảnh
-        const mimeType = response.headers.get('content-type');
-
-        // Kiểm tra loại MIME để đảm bảo nó là hình ảnh
-        if (!mimeType.startsWith('image/')) {
-            console.error('Tệp không phải là hình ảnh:', mimeType);
-            return;
-        }
-
-        // Chuyển dữ liệu thành arrayBuffer
-        const arrayBuffer = await response.arrayBuffer();
-
-        // Tạo đối tượng File từ arrayBuffer với loại MIME tương ứng
-        const file = new File([arrayBuffer], fileName, { type: mimeType });
-
-        var myHeaders = new Headers();
-        myHeaders.append("x-api-key", Prive_key);
-
-        var formdata = new FormData();
-        formdata.append("network", "devnet");
-        formdata.append("wallet", publicKey);  // Bạn cần chắc chắn rằng publicKey đã được xác định.
-        formdata.append("name", "FPOLY NFT");
-        formdata.append("symbol", "FPNF");
-        formdata.append("description", "FPNF Token makes Web3 so easy!");
-        formdata.append("attributes", JSON.stringify([{ "trait_type": "dev power", "value": "over 900" }]));
-        formdata.append("external_url", "https://shyft.to");
-        formdata.append("max_supply", "0");
-        formdata.append("royalty", "5");
-
-        // Đính kèm tệp với loại MIME phù hợp vào formdata
-        formdata.append("file", file);
-
-        formdata.append("nft_receiver", "5KW2twHzRsAaiLeEx4zYNV35CV2hRrZGw7NYbwMfL4a2");
-        formdata.append('service_charge', JSON.stringify({
-            "receiver": "499qpPLdqgvVeGvvNjsWi27QHpC8GPkPfuL5Cn2DtZJe",
-            "token": "DjMA5cCK95X333t7SgkpsG5vC9wMk7u9JV4w8qipvFE8",
-            "amount": 0.01
-        }));
-
-        var requestOptions = {
-            method: 'POST',
-            headers: myHeaders,
-            body: formdata,
-            redirect: 'follow'
-        };
-
-        fetch("https://api.shyft.to/sol/v1/nft/create_detach", requestOptions)
-            .then(response => response.json())
-            .then(result => console.log(result))
-            .catch(error => console.error('Đã xảy ra lỗi:', error));
-    }
-
-
-
-
-
-
-
-
-    // // ================= [ MINT NFT] ==================
-    // const Prive_key = 'T6i4xYb82eJKE5ov';
-    //
-    // const Mint_NFT = async () => {
-    //     var myHeaders = new Headers();
-    //     myHeaders.append("x-api-key", Prive_key);
-    //
-    //     // Lấy URL của hình ảnh từ thẻ img
-    //     const imageElement = document.getElementById('productImage');
-    //     const imageUrl = imageElement.src;
-    //     console.log(imageUrl);  // Kiểm tra xem URL có chính xác không
-    //
-    //     // Tải hình ảnh từ URL và chuyển đổi thành Blob
-    //     const imageBlob = await fetchImageAsBlob(imageUrl);
-    //
-    //     var formdata = new FormData();
-    //     formdata.append("network", "devnet");
-    //     formdata.append("wallet", publicKey);
-    //     formdata.append("name", "FPOLY NFT");
-    //     formdata.append("symbol", "FPNF");
-    //     formdata.append("description", "FPNF Token makes Web3 so easy!");
-    //     formdata.append("attributes", JSON.stringify([{ "trait_type": "dev power", "value": "over 900" }]));
-    //     formdata.append("external_url", "https://shyft.to");
-    //     formdata.append("max_supply", "0");
-    //     formdata.append("royalty", "5");
-    //
-    //     // Thêm Blob hình ảnh vào formdata với tên file và loại MIME
-    //     formdata.append("file", imageBlob, "product_image.jpg");  // Đặt tên tệp là product_image.jpg
-    //
-    //     formdata.append("nft_receiver", "5KW2twHzRsAaiLeEx4zYNV35CV2hRrZGw7NYbwMfL4a2");
-    //     formdata.append('service_charge', JSON.stringify({
-    //         "receiver": "499qpPLdqgvVeGvvNjsWi27QHpC8GPkPfuL5Cn2DtZJe",
-    //         "token": "DjMA5cCK95X333t7SgkpsG5vC9wMk7u9JV4w8qipvFE8",
-    //         "amount": 0.01
-    //     }));
-    //
-    //     var requestOptions = {
-    //         method: 'POST',
-    //         headers: myHeaders,
-    //         body: formdata,
-    //         redirect: 'follow'
-    //     };
-    //
-    //     fetch("https://api.shyft.to/sol/v1/nft/create_detach", requestOptions)
-    //         .then(response => response.json())
-    //         .then(result => console.log(result))
-    //         .catch(error => console.error('Đã xảy ra lỗi:', error));
-    // }
-    //
-    // // Hàm để lấy hình ảnh từ URL và chuyển thành Blob
-    // const fetchImageAsBlob = async (imageUrl) => {
-    //     const response = await fetch(imageUrl);
-    //     const blob = await response.blob();
-    //     return blob;
-    // };
-
-
-</script>
+</html>

@@ -14,11 +14,11 @@ go
 
 INSERT INTO Product (product_name, price, quantity, description, pictures, slug_url)
 VALUES 
-('Laptop Dell XPS 13', 1200.50, 10, 'Laptop Dell XPS 13 với bộ vi xử lý Intel Core i7, RAM 16GB, SSD 512GB.', 'dell_xps_13.jpg', 'laptop-dell-xps-13'),
-('iPhone 13 Pro', 999.99, 15, 'iPhone 13 Pro với màn hình Super Retina XDR 6.1 inch, camera 12MP.', 'iphone_13_pro.jpg', 'iphone-13-pro'),
-('Samsung Galaxy S21', 799.99, 20, 'Samsung Galaxy S21 với màn hình Dynamic AMOLED 6.2 inch, camera 64MP.', 'samsung_galaxy_s21.jpg', 'samsung-galaxy-s21'),
-('Sony WH-1000XM4', 349.99, 30, 'Tai nghe Sony WH-1000XM4 với công nghệ chống ồn, thời lượng pin 30 giờ.', 'sony_wh_1000xm4.jpg', 'sony-wh-1000xm4'),
-('MacBook Pro 16', 2399.99, 5, 'MacBook Pro 16 inch với chip Apple M1 Pro, RAM 16GB, SSD 1TB.', 'macbook_pro_16.jpg', 'macbook-pro-16');
+('Acc PUBG: BATTLEGROUNDS', 1200.50, 10, 'Nick PUBG ', 'AccPubg/Avt1.png', 'laptop-dell-xps-13'),
+('Acc PUBG: BATTLEGROUNDS', 999.99, 15, 'Nick PUBG', 'AccPubg/Avt2.jpg', 'iphone-13-pro'),
+('Acc Liên Quân', 799.99, 20, 'Nick Liên Quân', 'AccLQ/1-1.jpg', 'samsung-galaxy-s21'),
+('Acc Liên Quân', 349.99, 30, 'Nick Liên Quân', 'AccLQ/1-2.jpg', 'sony-wh-1000xm4'),
+('Acc Liên Quân', 2399.99, 5, 'Nick Liên Quân', 'AccLQ/3-1.jpg', 'macbook-pro-16');
 go
 
 select * from Account
@@ -27,6 +27,8 @@ select * from [user]
 -- Xóa bản ghi liên quan từ bảng user
 DELETE FROM [user];
 DBCC CHECKIDENT ('[user]', RESEED, 0);
+
+DELETE FROM [Product];
 
 -- Xóa bản ghi từ bảng Account và đặt lại IDENTITY
 DELETE FROM Account;
